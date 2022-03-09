@@ -21,30 +21,30 @@ public class GUI {
 
     private JScrollPane scroll;
 
-    public static Color gray;
+    public static Color gray = new Color(40, 40, 40);
+	public static Color darkGray = new Color(30, 30, 30);
 
     public GUI(FileHandler handler) {
         this.handler = handler;
 		panelList = new ArrayList<>();
-        frame = new JFrame();
+        frame = new JFrame("To-do List");
         mainPanel = new JPanel();
         scroll = new JScrollPane(mainPanel);
-        gray = new Color(40, 40, 40);
 
         frame.setResizable(false);
         arrange();
-        frame.setSize(515, 390);
-        frame.setSize(515, 400);
+        frame.setSize(605, 390);
+        frame.setSize(600, 400);
     }
 
     private void arrange() {
         frame.setDefaultCloseOperation(3);
-        frame.setBounds(515, 100, 500, 400);
+        frame.setBounds(500, 100, 600, 400);
 
-        mainPanel.setLayout(new WrapLayout());
-        mainPanel.setBackground(gray);
+        mainPanel.setLayout(new WrapLayout(FlowLayout.LEFT, 0, 0));
+        mainPanel.setBackground(Color.blue);
 
-        scroll.setBounds(0, 0, 500, 400);
+        scroll.setBounds(0, 0, 600, 400);
         scroll.setBorder(BorderFactory.createEmptyBorder());
         scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);

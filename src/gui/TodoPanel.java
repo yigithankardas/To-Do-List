@@ -20,32 +20,32 @@ public class TodoPanel extends JPanel {
     public TodoPanel(String description, String deadline, String clock) {
         super();
         this.setLayout(null);
-        this.setPreferredSize(new Dimension(500, 360));
+        this.setPreferredSize(new Dimension(600, 370));
 
         descriptionPanel = new JPanel();
         descriptionPanel.setBackground(GUI.gray);
         descriptionPanel.setLayout(null);
-        descriptionPanel.setBorder(BorderFactory.createLineBorder(Color.red));
-        descriptionPanel.setBounds(1, 80, 485, 282);
+        //descriptionPanel.setBorder(BorderFactory.createLineBorder(Color.red));
+        descriptionPanel.setBounds(0, 80, 590, 295);
 
         deadlinePanel = new JPanel();
         deadlinePanel.setBackground(GUI.gray);
         deadlinePanel.setLayout(null);
         deadlinePanel.setBorder(BorderFactory.createLineBorder(Color.blue));
-        deadlinePanel.setBounds(1, 1, 378, 80);
+        deadlinePanel.setBounds(0, 0, 423, 80);
 
         clockPanel = new JPanel();
-        clockPanel.setBackground(GUI.gray);
+        clockPanel.setBackground(GUI.darkGray);
         clockPanel.setLayout(null);
-        clockPanel.setBorder(BorderFactory.createLineBorder(Color.yellow));
-        clockPanel.setBounds(380, 0, 105, 80);
+        //clockPanel.setBorder(BorderFactory.createLineBorder(Color.yellow));
+        clockPanel.setBounds(423, 0, 167, 80);
 
         descriptionField = new JTextField();
         descriptionField.setBackground(Color.black);
         descriptionField.setForeground(Color.white);
         descriptionField.setCaretColor(Color.gray);
         descriptionField.setFont(new Font("SansSerif", Font.PLAIN, 25));
-        descriptionField.setBounds(1, 1, 482, 280);
+        descriptionField.setBounds(0, 0, 570, 295);
         descriptionField.setBorder(BorderFactory.createEmptyBorder());
         descriptionField.setText(description);
         descriptionPanel.add(descriptionField);
@@ -55,7 +55,7 @@ public class TodoPanel extends JPanel {
         deadlineLabel.setText(deadline);
         deadlineLabel.setFont(new Font("SansSerif", Font.BOLD, 35));
         deadlineLabel.setForeground(Color.white);
-        deadlineLabel.setBounds(30, 1, 200, 70);
+        deadlineLabel.setBounds(30, 0, 200, 70);
         deadlinePanel.add(deadlineLabel);
 
         clockLabel = new JLabel();
@@ -63,7 +63,7 @@ public class TodoPanel extends JPanel {
         clockLabel.setText(clock);
         clockLabel.setFont(new Font("SansSerif", Font.BOLD, 30));
         clockLabel.setForeground(Color.white);
-        clockLabel.setBounds(15, 1, 80, 70);
+        clockLabel.setBounds(15, 0, 80, 70);
         clockPanel.add(clockLabel);
 
         this.add(descriptionPanel);
