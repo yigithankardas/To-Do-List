@@ -17,7 +17,7 @@ public class TodoPanel extends JPanel {
  
     private JTextField descriptionField;
     
-    public TodoPanel() {
+    public TodoPanel(String description, String deadline, String clock) {
         super();
         this.setLayout(null);
         this.setPreferredSize(new Dimension(500, 360));
@@ -47,11 +47,12 @@ public class TodoPanel extends JPanel {
         descriptionField.setFont(new Font("SansSerif", Font.PLAIN, 25));
         descriptionField.setBounds(1, 1, 482, 280);
         descriptionField.setBorder(BorderFactory.createEmptyBorder());
+        descriptionField.setText(description);
         descriptionPanel.add(descriptionField);
 
         deadlineLabel = new JLabel();
         deadlineLabel = new JLabel();
-        deadlineLabel.setText("08/03/2021");
+        deadlineLabel.setText(deadline);
         deadlineLabel.setFont(new Font("SansSerif", Font.BOLD, 35));
         deadlineLabel.setForeground(Color.white);
         deadlineLabel.setBounds(30, 1, 200, 70);
@@ -59,7 +60,7 @@ public class TodoPanel extends JPanel {
 
         clockLabel = new JLabel();
         clockLabel = new JLabel();
-        clockLabel.setText("12:00");
+        clockLabel.setText(clock);
         clockLabel.setFont(new Font("SansSerif", Font.BOLD, 30));
         clockLabel.setForeground(Color.white);
         clockLabel.setBounds(15, 1, 80, 70);

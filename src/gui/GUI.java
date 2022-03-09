@@ -3,11 +3,15 @@ package gui;
 import javax.swing.*;
 
 import fileio.FileHandler;
+import fileio.FileHandler.Node;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class GUI {
+
+	private ArrayList<TodoPanel> panelList;
 
     private FileHandler handler;
 
@@ -21,11 +25,12 @@ public class GUI {
 
     public GUI(FileHandler handler) {
         this.handler = handler;
+		panelList = new ArrayList<>();
         frame = new JFrame();
         mainPanel = new JPanel();
         scroll = new JScrollPane(mainPanel);
-
         gray = new Color(40, 40, 40);
+
         frame.setResizable(false);
         arrange();
         frame.setSize(515, 390);
@@ -45,10 +50,13 @@ public class GUI {
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         scroll.getVerticalScrollBar().setUnitIncrement(50);
 
-        TodoPanel panel1 = new TodoPanel();
-        TodoPanel panel2 = new TodoPanel();
-        mainPanel.add(panel1);
-        mainPanel.add(panel2);
+       ArrayList<Node> list = handler.getNodeList();
+	   for (int i = 0; i < list.size(); i++) {
+		   Node node = list.get(i);
+		   TodoPanel panel = new TodoPanel(node.description(), node.deadline(), node.clock());
+		   panelList.add(panel);
+		   mainPanel.add(panel);
+	   }
         
         frame.add(scroll);
         frame.setVisible(true);
