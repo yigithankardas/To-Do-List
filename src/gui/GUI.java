@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import fileio.FileHandler;
 import fileio.FileHandler.Node;
+import gui.listeners.OnCloseListener;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -38,7 +39,7 @@ public class GUI {
     }
 
     private void arrange() {
-        frame.setDefaultCloseOperation(3);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.setBounds(500, 100, 600, 400);
 
         mainPanel.setLayout(new WrapLayout(FlowLayout.LEFT, 0, 0));
@@ -59,6 +60,7 @@ public class GUI {
 	   }
         
         frame.add(scroll);
+		frame.addWindowListener(new OnCloseListener(handler, frame, panelList));
         frame.setVisible(true);
     }
 

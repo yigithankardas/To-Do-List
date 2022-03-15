@@ -16,15 +16,6 @@ public class Main {
             System.exit(0);
 		}
 
-        PrintWriter writer = null;
-        try {
-            writer = new PrintWriter(file);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        writer.write("description,09/03/2022,08:00\ndescription2,10/03/2022,09:15");
-        writer.close();
-
         FileHandler handler = new FileHandler(file);
         new GUI(handler);
 

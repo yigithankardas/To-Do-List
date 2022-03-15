@@ -43,11 +43,13 @@ public class FileHandler {
     private StringBuilder builder;
     private Scanner scan;
     private ArrayList<Node> list;
+    private PrintWriter writer;
 
     public FileHandler(File file) {
         this.file = file;
         list = new ArrayList<>();
         builder = new StringBuilder("");
+        writer = null;
         readFileFillArray();
     }
 
@@ -87,5 +89,19 @@ public class FileHandler {
 
             list.add(new Node(description, deadline, clock));
         }
+        scan.close();
+    }
+
+    public void output() {
+        try {
+            writer = new PrintWriter(file);
+        } 
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        for (Node panel : list) {
+            writer.write(panel.description + "," + panel.deadline + "," + panel.clock + "\n");
+        }
+        writer.close();
     }
 }
