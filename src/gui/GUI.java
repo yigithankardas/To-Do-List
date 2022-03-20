@@ -43,7 +43,7 @@ public class GUI {
         frame.setBounds(500, 100, 600, 400);
 
         mainPanel.setLayout(new WrapLayout(FlowLayout.LEFT, 0, 0));
-        mainPanel.setBackground(Color.blue);
+        mainPanel.setBackground(gray);
 
         scroll.setBounds(0, 0, 600, 400);
         scroll.setBorder(BorderFactory.createEmptyBorder());
