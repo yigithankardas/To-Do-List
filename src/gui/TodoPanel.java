@@ -32,20 +32,20 @@ public class TodoPanel extends JPanel {
         deadlinePanel.setBackground(GUI.gray);
         deadlinePanel.setLayout(null);
         deadlinePanel.setBorder(BorderFactory.createLineBorder(Color.blue));
-        deadlinePanel.setBounds(0, 0, 423, 80);
+        deadlinePanel.setBounds(0, 0, 433, 80);
 
         clockPanel = new JPanel();
         clockPanel.setBackground(GUI.darkGray);
         clockPanel.setLayout(null);
         //clockPanel.setBorder(BorderFactory.createLineBorder(Color.yellow));
-        clockPanel.setBounds(423, 0, 167, 80);
+        clockPanel.setBounds(433, 0, 167, 80);
 
         descriptionField = new JTextField();
         descriptionField.setBackground(Color.black);
         descriptionField.setForeground(Color.white);
         descriptionField.setCaretColor(Color.gray);
         descriptionField.setFont(new Font("SansSerif", Font.PLAIN, 25));
-        descriptionField.setBounds(0, 0, 570, 295);
+        descriptionField.setBounds(0, 0, 590, 295);
         descriptionField.setBorder(BorderFactory.createEmptyBorder());
         descriptionField.setText(description);
         descriptionPanel.add(descriptionField);
