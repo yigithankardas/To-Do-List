@@ -62,7 +62,7 @@ public class FileHandler {
             scan = new Scanner(file);
         }
         catch (FileNotFoundException e) {
-            System.out.println("Exception thrown in \'FileHandler\' class.");
+            System.out.println("Exception in \'FileHandler\' class.");
             System.exit(0);
         }
 

@@ -30,7 +30,7 @@ public class AddPanelHighlighter implements MouseListener {
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        panel.setBackground(color);
+        panel.setBackground(colorLight);
     }
 
     @Override
